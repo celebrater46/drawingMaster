@@ -1,0 +1,78 @@
+body {
+  background-color: #222;
+  color: #ddd;
+}
+
+main {
+  width: 300px;
+  margin: 0 auto;
+}
+
+img {
+  /* これがないと画像の下に隙間ができる */
+  vertical-align: bottom;
+}
+
+#mainImg {
+  width: 300px;
+  height: 200px;
+  margin-bottom: 8px;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(5, 56px);
+  gap: 5px;
+}
+
+.thumbnails li {
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.thumbnails li:hover, .thumbnails li.current {
+  opacity: 1;
+}
+
+.thumbnails img{
+  /* heightは省略すると縦横比を保って表示する */
+  width: 56px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  margin-bottom: 8px;
+
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  border: 1px solid #666;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 4px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+nav li:hover {
+  background-color: #444;
+}
+
+#play {
+  width: 140px;
+}
+
+#prev, #next {
+  width: 60px;
+}
