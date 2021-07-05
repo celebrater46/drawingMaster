@@ -84,7 +84,7 @@
         $('#result').text('通信中...');
         // Ajax通信を開始
         $.ajax({
-            url: 'helloAjax.php',
+            url: 'main.php',
             type: 'GET',
             dataType: 'text',
             // フォーム要素の内容をハッシュ形式に変換

@@ -22,19 +22,27 @@
     <ul class="thumbnails"></ul>
 
     <form name="fm">
-      <label>名前：<input type="text" name="name" size="15"></label>
-      <label for="mode">What do you draw?</label>
-      <select id="mode">
-        <option>景色</option>
-        <option>乗り物</option>
-        <option>動物</option>
-        <option>すべて</option>
-      </select>
-      <label for="interval">How long is the interval?</label>
-      <label><input type="text" id="interval" name="interval" size="5"> seconds.</label>
+<!--      <label>名前：<input type="text" name="name" size="15"></label>-->
+      <p>
+        <label for="mode">What do you draw?</label>
+        <select id="mode" name="mode">
+          <option>景色</option>
+          <option>乗り物</option>
+          <option>動物</option>
+          <option>すべて</option>
+        </select>
+      </p>
+      <p>
+        <label for="interval">How long is the interval?</label>
+      </p>
+      <p>
+        <label><input type="text" id="interval" name="interval" size="5" value="30"> seconds.</label>
+      </p>
       <!--    <input type="button" id="btnsend" name="submit" value="送信" onclick="asyncSend()">-->
       <input type="button" id="btnsend" name="submit" value="送信">
     </form>
+    <!-- for ajax test -->
+    <p id="result"></p>
   </main>
   <script src="main.js"></script>
 </body>
