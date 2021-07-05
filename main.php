@@ -29,6 +29,7 @@ function getList($pic) {
 }
 
 $list = getList($_REQUEST["mode"]);
+//$list = glob('./img/landscapes/*');
 
 
 
@@ -37,7 +38,12 @@ $list = getList($_REQUEST["mode"]);
 //var_dump($animals);
 //var_dump($vehicles);
 //var_dump($allPhotos);
-var_dump($list);
-
+//var_dump($list);
+//echo($list[0]);
+//echo("Hello World");
+foreach($list as $item) {
+    echo($item . PHP_EOL);
+}
+//echo($_REQUEST["mode"]);
 
 //die('{"items": [{ "id": 1, "name": "Apples",  "price": "$2" }, { "id": 2, "name": "Peaches", "price": "$5" }]}');
