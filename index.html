@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <title>Drawing Master</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </html>
 <body>
   <h1>Let's Enjoyable Training!</h1>
@@ -19,6 +20,21 @@
     </nav>
 
     <ul class="thumbnails"></ul>
+
+    <form name="fm">
+      <label>名前：<input type="text" name="name" size="15"></label>
+      <label for="mode">What do you draw?</label>
+      <select id="mode">
+        <option>景色</option>
+        <option>乗り物</option>
+        <option>動物</option>
+        <option>すべて</option>
+      </select>
+      <label for="interval">How long is the interval?</label>
+      <label><input type="text" id="interval" name="interval" size="5"> seconds.</label>
+      <!--    <input type="button" id="btnsend" name="submit" value="送信" onclick="asyncSend()">-->
+      <input type="button" id="btnsend" name="submit" value="送信">
+    </form>
   </main>
   <script src="main.js"></script>
 </body>
