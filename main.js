@@ -33,7 +33,8 @@
     }
 
     // Get the list of image files from main.php
-    $('#btnsend').on('click', () => {
+    // $('#btnsend').on('click', () => {
+    const ajax = () => {
         $('#result').text('通信中...');
         $.ajax({
             url: 'main.php',
@@ -48,6 +49,7 @@
             for(let i = 0; i < images.length; i++) {
                 console.log("images[i]:" + images[i]);
             }
+            changePicture();
             playSlideshow();
         }).fail(function(jqXHR, textStatus) {
             console.log("Failed:");
@@ -55,18 +57,19 @@
         }).always(function() {
             console.log( "ajax complete" );
         });
-    })
+    }
 
     // When pushed the play button
     const play = document.getElementById("play");
-    const btnSend = document.getElementById("btnsend");
+    // const btnSend = document.getElementById("btnsend");
     const el = document.getElementById("interval");
     play.addEventListener("click", () => {
         console.log("Hello world");
         if (isPlaying === false) {
             interval = parseInt(el.value) * 1000;
             console.log("el.value" + el.value);
-            btnSend.click();
+            // btnSend.click();
+            ajax();
             play.value = "Drawing Stop";
         } else {
             clearTimeout(timeoutId);
