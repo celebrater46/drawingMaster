@@ -90,13 +90,14 @@
             // const temp = data;
             // const unified = temp.join('');
             // const images = unified.split('./');
-            const images = data.split('./');
+            images = data.split('./');
 // expected output: "FireAirWater"
             for(let i = 0; i < images.length; i++) {
                 console.log("images[i]:" + images[i]);
                 // console.log("data[i]:" + data[i]);
             }
             $("#result").text(data);
+            playSlideshow();
         }).fail(function(jqXHR, textStatus) {
             // 通信失敗時の処理を記述
             console.log("Failed:");
@@ -114,7 +115,7 @@
         console.log("Hello world");
         if (isPlaying === false) {
             btnSend.click();
-            playSlideshow();
+            // playSlideshow();
             play.textContent = "Pause";
         } else {
             clearTimeout(timeoutId);
