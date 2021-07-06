@@ -33,7 +33,6 @@
     }
 
     // Get the list of image files from main.php
-    // $('#btnsend').on('click', () => {
     const ajax = () => {
         $('#result').text('通信中...');
         $.ajax({
@@ -61,14 +60,12 @@
 
     // When pushed the play button
     const play = document.getElementById("play");
-    // const btnSend = document.getElementById("btnsend");
     const el = document.getElementById("interval");
     play.addEventListener("click", () => {
         console.log("Hello world");
         if (isPlaying === false) {
             interval = parseInt(el.value) * 1000;
             console.log("el.value" + el.value);
-            // btnSend.click();
             ajax();
             play.value = "Drawing Stop";
         } else {
