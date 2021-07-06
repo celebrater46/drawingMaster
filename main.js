@@ -100,6 +100,7 @@
     const play = document.getElementById("play");
     const btnSend = document.getElementById("btnsend");
     play.addEventListener("click", () => {
+        console.log("Hello world");
         if (isPlaying === false) {
             btnSend.click();
             playSlideshow();
