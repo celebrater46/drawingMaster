@@ -1,10 +1,7 @@
 body {
   background-color: #222;
   color: #ddd;
-}
-
-h1 {
-  font-size: 100px;
+  text-align: center;
 }
 
 main {
