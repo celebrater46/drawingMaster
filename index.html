@@ -6,23 +6,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </html>
 <body>
-<!--  <h1>Happy Drawing!</h1>-->
   <main>
     <img id="mainImg">
-
-<!--    <nav>-->
-<!--      <ul>-->
-<!--        <li id="play">Play</li>-->
-<!--        &lt;!&ndash; 不等号記号はHTMLタグとかぶらないように文字実体参照（アンパサンド）を使う &ndash;&gt;-->
-<!--        <li id="prev">&lt;</li>-->
-<!--        <li id="next">&gt;</li>-->
-<!--      </ul>-->
-<!--    </nav>-->
-
-<!--    <ul class="thumbnails"></ul>-->
-
     <form name="fm">
-<!--      <label>名前：<input type="text" name="name" size="15"></label> -->
       <p>
         <label for="mode">What do you draw?</label>
         <select id="mode" name="mode">
@@ -38,16 +24,9 @@
       <p>
         <label><input type="text" id="interval" name="interval" size="5" value="30"> seconds.</label>
       </p>
-      <!--    <input type="button" id="btnsend" name="submit" value="送信" onclick="asyncSend()">-->
-<!--      <input type="button" id="btnsend" name="submit" value="送信">-->
       <input type="button" id="btnsend" name="btnsend" value="Test Ajax">
       <input type="button" id="play" name="play" value="Drawing Start">
-<!--      <button id="btnsend" name="btnsend">Test Ajax</button>-->
-<!--      <button id="play" name="play">Drawing Start</button>-->
     </form>
-    <!-- for ajax test -->
-    <p id="result"></p>
   </main>
-<!--  <script src="ajax.js"></script>-->
   <script src="main.js"></script>
 </body>
