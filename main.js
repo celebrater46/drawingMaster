@@ -42,14 +42,14 @@
     // });
 
     const changePicture = () => {
-        let target = currentIndex + 1;
-        if (target === images.length) {
-            target = 0;
+        currentIndex++;
+        if (currentIndex >= images.length) {
+            currentIndex = 1;
         }
         // document.querySelectorAll(".thumbnails > li")[target].click();
-        mainImage.src = images[target];
-        console.log("images[target]: ");
-        console.log(images[target]);
+        mainImage.src = images[currentIndex];
+        console.log("images[currentIndex]: " + currentIndex);
+        console.log(images[currentIndex]);
     }
     // const prevButton = document.getElementById("prev");
     // prevButton.addEventListener("click", () => {
@@ -116,10 +116,12 @@
         if (isPlaying === false) {
             btnSend.click();
             // playSlideshow();
-            play.textContent = "Pause";
+            // play.textContent = "PausePause";
+            play.value = "Drawing Stop";
         } else {
             clearTimeout(timeoutId);
-            play.textContent = "Play";
+            // play.textContent = "Play";
+            play.value = "Drawing Start";
         }
         isPlaying = !isPlaying; // 値の反転
     });
