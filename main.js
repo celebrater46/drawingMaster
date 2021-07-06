@@ -7,7 +7,7 @@
         "./img/default.jpg"
     ];
     let currentIndex = 0;
-    let interval = 2000;
+    let interval = 3000;
     const mainImage = document.getElementById("mainImg");
     mainImage.src = images[currentIndex]; // Not "textContent"
 
@@ -17,8 +17,6 @@
             currentIndex = 1;
         }
         mainImage.src = images[currentIndex];
-        console.log("images[currentIndex]: " + currentIndex);
-        console.log(images[currentIndex]);
     }
 
     let isPlaying = false;
@@ -28,7 +26,6 @@
         timeoutId = setTimeout(() => {
             changePicture();
             playSlideshow();
-            console.log("interval" + interval);
         }, interval);
     }
 
@@ -62,10 +59,8 @@
     const play = document.getElementById("play");
     const el = document.getElementById("interval");
     play.addEventListener("click", () => {
-        console.log("Hello world");
         if (isPlaying === false) {
             interval = parseInt(el.value) * 1000;
-            console.log("el.value" + el.value);
             ajax();
             play.value = "Drawing Stop";
         } else {
