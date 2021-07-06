@@ -61,8 +61,6 @@
     const play = document.getElementById("play");
     const btnSend = document.getElementById("btnsend");
     const el = document.getElementById("interval");
-    // console.log("el.value" + el.value);
-    // interval = parseInt(el.value) * 100;
     play.addEventListener("click", () => {
         console.log("Hello world");
         if (isPlaying === false) {
