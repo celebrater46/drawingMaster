@@ -3,32 +3,34 @@
 // リピート再生とランダム再生
 
 {
-    let images = [];
+    let images = [
+        "./img/default.jpg"
+    ];
     let currentIndex = 0;
     const mainImage = document.getElementById("mainImg");
     mainImage.src = images[currentIndex]; // Not "textContent"
 
     // forEachは二つ以上の引数に括弧必須
-    images.forEach((image, index) => {
-        const img = document.createElement("img");
-        img.src = image;
-
-        const li = document.createElement("li");
-        if (index === currentIndex) {
-            li.classList.add("current");
-        }
-
-        li.addEventListener("click", () => {
-            mainImage.src = image;
-            const thumbnails = document.querySelectorAll(".thumbnails > li");
-            thumbnails[currentIndex].classList.remove("current");
-            currentIndex = index;
-            thumbnails[currentIndex].classList.add("current");
-        });
-
-        li.appendChild(img);
-        document.querySelector(".thumbnails").appendChild(li);
-    });
+    // images.forEach((image, index) => {
+    //     const img = document.createElement("img");
+    //     img.src = image;
+    //
+    //     const li = document.createElement("li");
+    //     if (index === currentIndex) {
+    //         li.classList.add("current");
+    //     }
+    //
+    //     li.addEventListener("click", () => {
+    //         mainImage.src = image;
+    //         const thumbnails = document.querySelectorAll(".thumbnails > li");
+    //         thumbnails[currentIndex].classList.remove("current");
+    //         currentIndex = index;
+    //         thumbnails[currentIndex].classList.add("current");
+    //     });
+    //
+    //     li.appendChild(img);
+    //     document.querySelector(".thumbnails").appendChild(li);
+    // });
 
     // const nextButton = document.getElementById("next");
     // nextButton.addEventListener("click", () => {
@@ -44,8 +46,9 @@
         if (target === images.length) {
             target = 0;
         }
-        document.querySelectorAll(".thumbnails > li")[target].click();
-    });
+        // document.querySelectorAll(".thumbnails > li")[target].click();
+        mainImage.src = images[currentIndex];
+    }
     // const prevButton = document.getElementById("prev");
     // prevButton.addEventListener("click", () => {
     //     let target = currentIndex - 1;
