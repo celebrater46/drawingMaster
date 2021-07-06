@@ -47,7 +47,9 @@
             target = 0;
         }
         // document.querySelectorAll(".thumbnails > li")[target].click();
-        mainImage.src = images[currentIndex];
+        mainImage.src = images[target];
+        console.log("images[target]: ");
+        console.log(images[target]);
     }
     // const prevButton = document.getElementById("prev");
     // prevButton.addEventListener("click", () => {
@@ -85,6 +87,13 @@
             console.log("Succeeded: data is ...");
             // console.log(data);
             images = data;
+
+            console.log(images.join(''));
+// expected output: "FireAirWater"
+//             for(let i = 0; i < images.length; i++) {
+//                 console.log("images[i]:" + images[i]);
+//                 console.log("data[i]:" + data[i]);
+//             }
             $("#result").text(data);
         }).fail(function(jqXHR, textStatus) {
             // 通信失敗時の処理を記述

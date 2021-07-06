@@ -19,8 +19,13 @@ function getList($pic) {
     }
 }
 
-$list = getList($_REQUEST["mode"]);
-foreach($list as $item) {
+$listTemp = getList($_REQUEST["mode"]);
+//$list = [];
+foreach($listTemp as $item) {
+//    $result = $item;
+//    $result = str_replace("./", "", $item);
+//    $list[] = $item;
+//    echo($result . PHP_EOL);
     echo($item . PHP_EOL);
 }
 
