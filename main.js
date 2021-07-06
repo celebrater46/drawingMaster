@@ -78,7 +78,7 @@
         $.ajax({
             url: 'main.php',
             type: 'GET',
-            dataType: 'json',
+            dataType: 'text',
             // フォーム要素の内容をハッシュ形式に変換
             data: $('form').serializeArray(),
             timeout: 5000,
@@ -87,13 +87,15 @@
             console.log("Succeeded: data is ...");
             console.log(data);
             // images = data;
-
-            // console.log(images.join(''));
+            // const temp = data;
+            // const unified = temp.join('');
+            // const images = unified.split('./');
+            const images = data.split('./');
 // expected output: "FireAirWater"
-//             for(let i = 0; i < images.length; i++) {
-//                 console.log("images[i]:" + images[i]);
-//                 console.log("data[i]:" + data[i]);
-//             }
+            for(let i = 0; i < images.length; i++) {
+                console.log("images[i]:" + images[i]);
+                // console.log("data[i]:" + data[i]);
+            }
             $("#result").text(data);
         }).fail(function(jqXHR, textStatus) {
             // 通信失敗時の処理を記述
