@@ -8,15 +8,46 @@
     ];
     let currentIndex = 0;
     let interval = 3000;
+    let isRandom = true;
     const mainImage = document.getElementById("mainImg");
     mainImage.src = images[currentIndex]; // Not "textContent"
 
-    const changePicture = () => {
+    const getRandomNumber = () => {
+        let i;
+        while(random !== currentIndex) {
+            const random = Math.ceil(Math.random() * (images.length - 1));
+            i++;
+            if(random !== currentIndex) {
+                return random;
+            } else if(i > 50) {
+                // Infinity loop measure
+                alert("Error: 'i' has been over 50 at changePictureRandom()");
+                return null;
+            }
+        }
+    }
+
+    const changePictureRandom = () => {
+        const random = getRandomNumber();
+        currentIndex = random;
+        mainImage.src = images[currentIndex];
+        console.log("currentIndex: " + currentIndex);
+    }
+
+    const changePictureOrder = () => {
         currentIndex++;
         if (currentIndex >= images.length) {
             currentIndex = 1;
         }
         mainImage.src = images[currentIndex];
+    }
+
+    const changePicture = () => {
+        if(isRandom) {
+            changePictureRandom();
+        } else {
+            changePictureOrder();
+        }
     }
 
     let isPlaying = false;
@@ -47,20 +78,24 @@
             }
             changePicture();
             playSlideshow();
-        }).fail(function(jqXHR, textStatus) {
+        }).fail((jqXHR, textStatus) => {
             console.log("Failed:");
             console.log(textStatus);
-        }).always(function() {
+        }).always(() => {
             console.log( "ajax complete" );
         });
     }
 
     // When pushed the play button
     const play = document.getElementById("play");
-    const el = document.getElementById("interval");
+    const elInt = document.getElementById("interval");
+    const elRan = document.getElementById("random");
     play.addEventListener("click", () => {
         if (isPlaying === false) {
-            interval = parseInt(el.value) * 1000;
+            interval = parseInt(elInt.value) * 1000;
+            isRandom = elRan.checked;
+            console.log("isRandom: ");
+            console.log(isRandom);
             ajax();
             play.value = "Drawing Stop";
         } else {

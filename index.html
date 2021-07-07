@@ -10,7 +10,7 @@
     <img id="mainImg">
     <form name="fm">
       <p>
-        <label for="mode">What do you draw?</label>
+        <label for="mode">Picture: </label>
         <select id="mode" name="mode">
           <option>landscapes</option>
           <option>vehicles</option>
@@ -19,7 +19,10 @@
         </select>
       </p>
       <p>
-        <label for="interval">How long is the interval? <input type="text" id="interval" name="interval" size="5" value="30"> seconds.</label>
+        <label for="interval">Interval: <input type="text" id="interval" name="interval" size="5" value="30"> seconds.</label>
+      </p>
+      <p>
+        <label>Order: <input type="checkbox" id="random" name="random" checked> Random</label>
       </p>
       <input type="button" id="play" name="play" value="Drawing Start">
     </form>
